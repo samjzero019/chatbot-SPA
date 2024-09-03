@@ -1,7 +1,7 @@
 // src/ChatButton.js
 
 import React from "react";
-import "../styles/ChatButton.css";
+import "./ChatButton.css";
 
 function ChatButton({ isVisible, toggleChat }) {
   return (

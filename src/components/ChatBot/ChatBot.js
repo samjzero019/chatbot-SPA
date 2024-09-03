@@ -1,10 +1,10 @@
 // src/ChatBot.js
 
 import React, { useState, useEffect, useRef } from "react";
-import Message from "./Message";
+import Message from "../Message/Message";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import "../styles/ChatBot.css";
+import "./ChatBot.css";
 import axios from "axios";
 
 function ChatBot({ isVisible, onClose }) {

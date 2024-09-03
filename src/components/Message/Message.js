@@ -1,7 +1,7 @@
 // src/Message.js
 
 import React from "react";
-import "../styles/Message.css";
+import "./Message.css";
 
 function Message({ text, sender }) {
   return (

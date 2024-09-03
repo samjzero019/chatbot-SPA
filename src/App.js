@@ -1,9 +1,9 @@
 // src/App.js
 
 import React, { useState } from "react";
-import ChatBot from "./components/ChatBot";
-import ChatButton from "./components/ChatButton";
-import "./styles/App.css";
+import ChatBot from "./components/ChatBot/ChatBot";
+import ChatButton from "./components/ChatButton/ChatButton";
+import "./global.css";
 
 function App() {
   const [isChatVisible, setChatVisible] = useState(false); // State to manage chatbot visibility
