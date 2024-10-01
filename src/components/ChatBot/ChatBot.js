@@ -7,7 +7,7 @@ import { faTimes, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import "./ChatBot.css";
 import axios from "axios";
 
-function ChatBot({ isVisible, onClose }) {
+function ChatBot() {
   const [messages, setMessages] = useState(() => {
     // Load messages from local storage on component mount
     const savedMessages = localStorage.getItem("chatMessages");
@@ -63,37 +63,30 @@ function ChatBot({ isVisible, onClose }) {
   }, [messages]);
 
   return (
-    isVisible && (
-      <div className="chatbot">
-        <div className="chatbot-header">
-          Help Bot
-          <button className="chatbot-close" onClick={onClose}>
-            <FontAwesomeIcon icon={faTimes} />
-          </button>
-        </div>
-        <div className="chatbot-messages">
-          {messages.map((msg, index) => (
-            <Message key={index} text={msg.text} sender={msg.sender} />
-          ))}
-          {isTyping && (
-            <div className="typing-indicator">يقوم الروبوت بمعالجة سؤالك</div>
-          )}
-          <div ref={messagesEndRef} />
-        </div>
-        <div className="chatbot-input">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyPress={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Type a message..."
-          />
-          <button onClick={handleSend} className="send-button">
-            <FontAwesomeIcon icon={faPaperPlane} />
-          </button>
-        </div>
+    <div className="chatbot">
+      <div className="chatbot-header">KFNL AI</div>
+      <div className="chatbot-messages">
+        {messages.map((msg, index) => (
+          <Message key={index} text={msg.text} sender={msg.sender} />
+        ))}
+        {isTyping && (
+          <div className="typing-indicator">يقوم الروبوت بمعالجة سؤالك</div>
+        )}
+        <div ref={messagesEndRef} />
       </div>
-    )
+      <div className="chatbot-input">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyPress={(e) => e.key === "Enter" && handleSend()}
+          placeholder="Type a message..."
+        />
+        <button onClick={handleSend} className="send-button">
+          <FontAwesomeIcon icon={faPaperPlane} />
+        </button>
+      </div>
+    </div>
   );
 }
 

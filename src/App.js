@@ -14,12 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <ChatButton isVisible={isChatVisible} toggleChat={toggleChat} />{" "}
-      {/* Button to toggle chat */}
-      {isChatVisible && (
-        <ChatBot isVisible={isChatVisible} onClose={toggleChat} />
-      )}{" "}
-      {/* Chatbot UI */}
+      <ChatBot />
     </div>
   );
 }
